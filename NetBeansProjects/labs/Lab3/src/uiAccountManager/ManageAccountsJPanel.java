@@ -4,17 +4,31 @@
  */
 package uiAccountManager;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import model.account;
+import model.accountdirectory;
+
 /**
  *
  * @author shrutisen
  */
 public class ManageAccountsJPanel extends javax.swing.JPanel {
+    
+    private accountdirectory accountDirectory;
+    JPanel userProcessContainer;
+ 
 
     /**
      * Creates new form ManageAccountsJPanel
      */
-    public ManageAccountsJPanel() {
+    public ManageAccountsJPanel(JPanel container, accountdirectory directory) {
         initComponents();
+        this.accountDirectory = new accountdirectory();
+        generateDemoData();
+        
+        userProcessContainer = container;
+        accountDirectory = directory;
     }
 
     /**
@@ -36,6 +50,11 @@ public class ManageAccountsJPanel extends javax.swing.JPanel {
         txtSearch = new javax.swing.JTextField();
 
         btnBack.setText("<<<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel1.setText("Manage Account");
@@ -112,6 +131,14 @@ public class ManageAccountsJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
@@ -123,4 +150,19 @@ public class ManageAccountsJPanel extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+    private void generateDemoData() {
+    account newAccount = accountDirectory.addAccount();
+    newAccount.setAccountNumber("4444444444");
+    newAccount.setRoutingNumber("0011223344");
+    newAccount.setBankName("Bank of America");
+    newAccount.setBalance(200);
+
+    account anotherNewAccount = accountDirectory.addAccount();
+    anotherNewAccount.setAccountNumber("5555555555");
+    anotherNewAccount.setRoutingNumber("0077112234");
+    anotherNewAccount.setBankName("Santander Bank");
+    anotherNewAccount.setBalance(1200);
+}
+
+
 }

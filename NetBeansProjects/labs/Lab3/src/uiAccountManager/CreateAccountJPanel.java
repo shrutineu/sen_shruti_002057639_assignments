@@ -4,17 +4,27 @@
  */
 package uiAccountManager;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import model.accountdirectory;
+
 /**
  *
  * @author shrutisen
  */
 public class CreateAccountJPanel extends javax.swing.JPanel {
+    
+    JPanel userProcessContainer;
+    accountdirectory accountDirectory; 
 
     /**
      * Creates new form CreateAccountJPanel
      */
-    public CreateAccountJPanel() {
+    public CreateAccountJPanel(JPanel container, accountdirectory directory) {
         initComponents();
+        
+        userProcessContainer = container;
+        accountDirectory = directory;
     }
 
     /**
@@ -39,6 +49,11 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         btnCreate = new javax.swing.JButton();
 
         btnBack.setText("<<<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel1.setText("Create Account");
@@ -108,6 +123,15 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
                 .addContainerGap(267, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        
+        userProcessContainer.remove(this);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
