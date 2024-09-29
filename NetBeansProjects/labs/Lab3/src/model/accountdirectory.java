@@ -35,5 +35,14 @@ public class accountdirectory {
     public void deleteAccount(account account) {
         accounts.remove(account);
     }
+    
+    public account searchAccount(String accountNumber) {
+    for (account a : accounts) {
+        if (a.getAccountNumber().contains(accountNumber)) {
+            return a; 
+        }
+    }
+    return null; 
+    
+    }
 }
-
