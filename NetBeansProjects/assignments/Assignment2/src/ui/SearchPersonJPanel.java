@@ -4,16 +4,21 @@
  */
 package ui;
 
+import javax.swing.JPanel;
+import model.PersonDirectory;
+
 /**
  *
  * @author shrutisen
  */
 public class SearchPersonJPanel extends javax.swing.JPanel {
+    JPanel workAreajPanel;
+    PersonDirectory personList;
 
     /**
      * Creates new form SearchPersonJPanel
      */
-    public SearchPersonJPanel() {
+    public SearchPersonJPanel(JPanel workAreajPanel, PersonDirectory personList) {
         initComponents();
     }
 

@@ -4,6 +4,7 @@
  */
 package ui;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import model.Person;
 import model.PersonDirectory;
@@ -16,11 +17,12 @@ import model.PersonDirectory;
 public class ListPersonJPanel extends javax.swing.JPanel {
 
     PersonDirectory personList;
+    JPanel workAreajPanel;
 
     /**
      * Creates new form ListPersonsJPanel
      */
-    public ListPersonJPanel(PersonDirectory personList) {
+    public ListPersonJPanel( JPanel workAreajPanel, PersonDirectory personList) {
         initComponents();
         
         this.personList = personList;

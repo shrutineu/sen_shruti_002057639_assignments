@@ -4,6 +4,8 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+import model.Person;
 import model.PersonDirectory;
 
 /**
@@ -13,11 +15,109 @@ import model.PersonDirectory;
 public class MainJFrame extends javax.swing.JFrame {
 
     PersonDirectory personList;
+
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
+        
+       this.personList = new PersonDirectory();
+       
+       //Intialising 5 person's data at the App startup
+       populateData();
+                
+    }
+
+    private void populateData() {
+        
+        Person person1 = personList.addPerson(); // Created Person1
+        
+        person1.setFirstName("John");
+        person1.setLastName("Doe");
+        person1.setSocialSecurityNumber(Long.parseLong("123456789"));
+        person1.setAnnualSalary(Float.parseFloat("123.9"));
+        person1.getHomeAddress().setStreetAddress("homeStreet1");
+        person1.getHomeAddress().setCity("homeCity1"); 
+        person1.getHomeAddress().setState("homeState1");
+        person1.getHomeAddress().setPostalCode("12345");
+        person1.getHomeAddress().setUnitNumber("homeUnit1");
+        person1.getWorkAddress().setCity("workCity1");
+        person1.getWorkAddress().setState("workState1");
+        person1.getWorkAddress().setStreetAddress("workStreet1");
+        person1.getWorkAddress().setUnitNumber("workUnit1");
+        person1.getWorkAddress().setPostalCode("123456");
+                        
+        Person person2 = personList.addPerson();// Created Person2
+ 
+        person2.setFirstName("Johny");
+        person2.setLastName("Basha");
+        person2.setSocialSecurityNumber(Long.parseLong("123457777"));        
+        person2.setAnnualSalary(Float.parseFloat("123.9"));
+        person2.getHomeAddress().setStreetAddress("homeStreet2");
+        person2.getHomeAddress().setCity("homeCity2"); 
+        person2.getHomeAddress().setState("homeState2");
+        person2.getHomeAddress().setPostalCode("13345");
+        person2.getHomeAddress().setUnitNumber("homeUnit2");
+        person2.getWorkAddress().setCity("workCity2");
+        person2.getWorkAddress().setState("workState2");
+        person2.getWorkAddress().setStreetAddress("workStreet2");
+        person2.getWorkAddress().setUnitNumber("workUnit2");
+        person2.getWorkAddress().setPostalCode("123457");
+        
+        Person person3 = personList.addPerson();// Created Person3
+ 
+        person3.setFirstName("Mike");
+        person3.setLastName("Tyson");
+        person3.setSocialSecurityNumber(Long.parseLong("123456789"));
+        person3.setAnnualSalary(Float.parseFloat("123.9"));
+        person3.getHomeAddress().setStreetAddress("homeStreet3");
+        person3.getHomeAddress().setCity("homeCity3"); 
+        person3.getHomeAddress().setState("homeState3");
+        person3.getHomeAddress().setPostalCode("14345");
+        person3.getHomeAddress().setUnitNumber("homeUnit3");
+        person3.getWorkAddress().setCity("workCity3");
+        person3.getWorkAddress().setState("workState3");
+        person3.getWorkAddress().setStreetAddress("workStreet3");
+        person3.getWorkAddress().setUnitNumber("workUnit3");
+        person3.getWorkAddress().setPostalCode("123458");
+        
+        Person person4 = personList.addPerson();// Created Person4
+ 
+        person4.setFirstName("San");
+        person4.setLastName("Tye");
+        person4.setSocialSecurityNumber(Long.parseLong("123456789"));
+        person4.setAnnualSalary(Float.parseFloat("123.9"));
+        person4.getHomeAddress().setStreetAddress("homeStreet4");
+        person4.getHomeAddress().setCity("homeCity4"); 
+        person4.getHomeAddress().setState("homeState4");
+        person4.getHomeAddress().setPostalCode("15345");
+        person4.getHomeAddress().setUnitNumber("homeUnit4");
+        person4.getWorkAddress().setCity("workCity4");
+        person4.getWorkAddress().setState("workState4");
+        person4.getWorkAddress().setStreetAddress("workStreet4");
+        person4.getWorkAddress().setUnitNumber("workUnit4");
+        person4.getWorkAddress().setPostalCode("123459");
+        
+        
+        Person person5 = personList.addPerson();// Created Person5
+ 
+        person5.setFirstName("Sam");
+        person5.setLastName("Ruth");
+        person5.setSocialSecurityNumber(Long.parseLong("123456789"));
+        person5.setAnnualSalary(Float.parseFloat("123.9"));
+        person5.getHomeAddress().setStreetAddress("homeStreet5");
+        person5.getHomeAddress().setCity("homeCity5"); 
+        person5.getHomeAddress().setState("homeState5");
+        person5.getHomeAddress().setPostalCode("16345");
+        person5.getHomeAddress().setUnitNumber("homeUnit5");
+        person5.getWorkAddress().setCity("workCity5");
+        person5.getWorkAddress().setState("workState5");
+        person5.getWorkAddress().setStreetAddress("workStreet5");
+        person5.getWorkAddress().setUnitNumber("workUnit5");
+        person5.getWorkAddress().setPostalCode("123469");
+        
+
     }
 
     /**
@@ -31,60 +131,40 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         btnjPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnWorkArea = new javax.swing.JButton();
         workAreajPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 500));
 
         btnjPanel.setBackground(new java.awt.Color(0, 102, 102));
 
-        jButton1.setText("Create Person");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnWorkArea.setText("Open Work Area");
+        btnWorkArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnWorkAreaActionPerformed(evt);
             }
         });
-
-        jButton2.setText("List Persons");
-
-        jButton3.setText("Search");
 
         javax.swing.GroupLayout btnjPanelLayout = new javax.swing.GroupLayout(btnjPanel);
         btnjPanel.setLayout(btnjPanelLayout);
         btnjPanelLayout.setHorizontalGroup(
             btnjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnjPanelLayout.createSequentialGroup()
-                .addContainerGap(619, Short.MAX_VALUE)
-                .addGroup(btnjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(47, 47, 47))
+                .addContainerGap(547, Short.MAX_VALUE)
+                .addComponent(btnWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
         );
-
-        btnjPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
-
         btnjPanelLayout.setVerticalGroup(
             btnjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnjPanelLayout.createSequentialGroup()
-                .addGap(221, 221, 221)
-                .addComponent(jButton1)
-                .addGap(50, 50, 50)
-                .addComponent(jButton2)
-                .addGap(54, 54, 54)
-                .addComponent(jButton3)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addGap(310, 310, 310)
+                .addComponent(btnWorkArea)
+                .addContainerGap(238, Short.MAX_VALUE))
         );
-
-        btnjPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
 
         jSplitPane1.setRightComponent(btnjPanel);
 
         workAreajPanel.setBackground(new java.awt.Color(204, 255, 255));
-        workAreajPanel.setMinimumSize(new java.awt.Dimension(100, 150));
         workAreajPanel.setLayout(new java.awt.CardLayout());
         jSplitPane1.setLeftComponent(workAreajPanel);
 
@@ -92,9 +172,7 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jSplitPane1)
-                .addContainerGap())
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,12 +182,17 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnWorkAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWorkAreaActionPerformed
 
         // TODO add your handling code here:
-        CreatePersonJPanel createPersonPanel = new CreatePersonJPanel(personList);
-        jSplitPane1.setLeftComponent(createPersonPanel);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        WorkAreaJPanel panel = new WorkAreaJPanel(workAreajPanel, personList);
+        workAreajPanel.add("WorkAreaJPanel", panel) ;
+        
+        CardLayout layout = (CardLayout) workAreajPanel.getLayout();
+        layout.next(workAreajPanel);
+        
+        
+    }//GEN-LAST:event_btnWorkAreaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,10 +230,8 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnWorkArea;
     private javax.swing.JPanel btnjPanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel workAreajPanel;
     // End of variables declaration//GEN-END:variables

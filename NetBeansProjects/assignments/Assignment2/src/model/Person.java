@@ -14,8 +14,8 @@ public class Person {
     
     private String firstName;  
     private String lastName;   
-    private long socialSecurityNumber; 
-     private float AnnualSalary;
+    private Long socialSecurityNumber; 
+    private Float AnnualSalary;
     private LocalDate DOB; 
     private Address homeAddress; 
     private Address workAddress; 
@@ -85,7 +85,7 @@ public class Person {
         return socialSecurityNumber;
     }
 
-    public void setSocialSecurityNumber(int socialSecurityNumber) {
+    public void setSocialSecurityNumber(Long socialSecurityNumber) {
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
