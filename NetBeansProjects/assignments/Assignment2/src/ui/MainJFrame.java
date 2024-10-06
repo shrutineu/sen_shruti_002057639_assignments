@@ -36,16 +36,18 @@ public class MainJFrame extends javax.swing.JFrame {
         person1.setFirstName("Shruti");
         person1.setLastName("Sen");
         person1.setSocialSecurityNumber(Long.parseLong("123456789"));
-        person1.setAnnualSalary(Float.parseFloat("1234.567"));
-        person1.getHomeAddress().setStreetAddress("Street1");
-        person1.getHomeAddress().setCity("City1"); 
-        person1.getHomeAddress().setState("State1");
+        person1.setAnnualSalary(Float.parseFloat("2000.3567"));
+        person1.getHomeAddress().setStreetAddress("Street 1");
+        person1.getHomeAddress().setCity("Boston"); 
+        person1.getHomeAddress().setState("MA");
         person1.getHomeAddress().setPostalCode("12345");
-        person1.getHomeAddress().setUnitNumber("Unit2");
-        person1.getWorkAddress().setCity("City2");
-        person1.getWorkAddress().setState("State2");
-        person1.getWorkAddress().setStreetAddress("Street2");
+        person1.getHomeAddress().setUnitNumber("Unit 2");
+        person1.getWorkAddress().setCity("City opa");
+        person1.getWorkAddress().setState("State fgh");
+        person1.getWorkAddress().setStreetAddress("Street 2");
         person1.getWorkAddress().setPostalCode("123456");
+        person1.getWorkAddress().setBuildingName("Building 4");
+        person1.setDOB("11/15/2001");
                         
         Person person2 = personList.addPerson();// Created Person2
  
@@ -60,8 +62,10 @@ public class MainJFrame extends javax.swing.JFrame {
         person2.getHomeAddress().setUnitNumber("Apt 8");
         person2.getWorkAddress().setCity("Chicago");
         person2.getWorkAddress().setState("xyz");
-        person2.getWorkAddress().setBuildingName("Boylston St");
+        person2.getWorkAddress().setStreetAddress("Boylston St");
         person2.getWorkAddress().setPostalCode("94837");
+        person2.getWorkAddress().setBuildingName("Building 12");
+        person2.setDOB("09/22/2003");
         
         Person person3 = personList.addPerson();// Created Person3
  
@@ -79,6 +83,7 @@ public class MainJFrame extends javax.swing.JFrame {
         person3.getWorkAddress().setStreetAddress("abc Street");
         person3.getWorkAddress().setBuildingName("Building A");
         person3.getWorkAddress().setPostalCode("458123");
+        person3.setDOB("11/02/2004");
         
         Person person4 = personList.addPerson();// Created Person4
  
@@ -96,6 +101,7 @@ public class MainJFrame extends javax.swing.JFrame {
         person4.getWorkAddress().setStreetAddress("Street 3");
         person4.getWorkAddress().setBuildingName("Building 7");
         person4.getWorkAddress().setPostalCode("123459");
+        person4.setDOB("02/22/2002");
         
         
         Person person5 = personList.addPerson();// Created Person5
@@ -114,6 +120,7 @@ public class MainJFrame extends javax.swing.JFrame {
         person5.getWorkAddress().setStreetAddress("Street onb");
         person5.getWorkAddress().setBuildingName("Unit 5");
         person5.getWorkAddress().setPostalCode("123469");
+        person5.setDOB("12//2003");
         
 
     }

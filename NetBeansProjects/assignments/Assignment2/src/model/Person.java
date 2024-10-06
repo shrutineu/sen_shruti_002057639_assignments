@@ -16,7 +16,7 @@ public class Person {
     private String lastName;   
     private Long socialSecurityNumber; 
     private Float AnnualSalary;
-    private LocalDate DOB; 
+    private String DOB; 
     private Address homeAddress; 
     private Address workAddress; 
     
@@ -49,7 +49,7 @@ public class Person {
 //    }
 
     public boolean isValidDOB() {
-        return DOB != null && DOB.isBefore(LocalDate.now());
+        return DOB != null;
     }
     
     public boolean isValidHomeAddress() {
@@ -89,19 +89,12 @@ public class Person {
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
-//    public int getAge() {
-//        return age;
-//    }
-//
-//    public void setAge(int age) {
-//        this.age = age;
-//    }
 
-    public LocalDate getDOB() {
+    public String getDOB() {
         return DOB;
     }
 
-    public void setDOB(LocalDate DOB) {
+    public void setDOB(String DOB) {
         this.DOB = DOB;
     }
 

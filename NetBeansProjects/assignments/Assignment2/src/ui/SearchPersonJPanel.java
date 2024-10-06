@@ -24,10 +24,11 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SearchPersonJPanel
      */
-    public SearchPersonJPanel(JPanel workAreajPanel, PersonDirectory personList) {
+    public SearchPersonJPanel(JPanel panel, PersonDirectory personList) {
         initComponents();
         
         this.personList = personList;
+        workAreajPanel = panel;
     }
 
     /**
@@ -85,7 +86,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        jButton1.setText("Main Menu");
+        jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -99,7 +100,7 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jButton1)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,6 +388,10 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+       workAreajPanel.remove(this);
+       CardLayout layout = (CardLayout) workAreajPanel.getLayout();
+       layout.previous(workAreajPanel);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
