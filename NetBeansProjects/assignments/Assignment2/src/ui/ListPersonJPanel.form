@@ -5,6 +5,12 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="cc" type="rgb"/>
     </Property>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[0, 0]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[0, 0]"/>
+    </Property>
   </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -23,14 +29,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel2" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel2" alignment="1" min="-2" max="-2" attributes="0"/>
+          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
           <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
@@ -46,203 +53,171 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblWorkStreetAddress" min="-2" pref="119" max="-2" attributes="0"/>
-                              <Component id="lblWorkzipCode" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtWorkState" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtWorkPostalCode" min="-2" pref="132" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblWorkCity" min="-2" pref="119" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtWorkBuildingName" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblWorkBuildingName" min="-2" pref="119" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtWorkStreetAddress" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblWorkState" min="-2" pref="119" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtWorkCity" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lblHomeUnitNumber" min="-2" pref="119" max="-2" attributes="0"/>
-                                  <Component id="lblHomeCity" min="-2" pref="119" max="-2" attributes="0"/>
-                                  <Component id="lblHomezipCode" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="lblHomeState" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtHomeUnitNumber" max="32767" attributes="0"/>
-                              <Component id="txtHomeCity" max="32767" attributes="0"/>
-                              <Component id="txtHomeState" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtHomeZip" alignment="0" pref="132" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="lblHomeStreetAddress" min="-2" pref="119" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtHomeStreetAddress" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                  <Component id="lblworkAddress" min="-2" pref="119" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="lblHomeAddress" min="-2" pref="119" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
-                          <Component id="btnDelete" min="-2" pref="121" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                          <Component id="btnView" min="-2" pref="121" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblSocialSecurityNumber" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblDOB" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblFirstName" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblworkAddress" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="lblWorkStreetAddress" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="lblWorkBuildingName" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="lblWorkCity" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="lblWorkState" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="lblWorkzipCode" min="-2" pref="119" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtWorkStreetAddress" linkSize="3" min="-2" pref="132" max="-2" attributes="0"/>
+                                              <Component id="txtWorkState" linkSize="3" min="-2" pref="132" max="-2" attributes="0"/>
+                                              <Component id="txtWorkBuildingName" linkSize="3" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                              <Component id="txtWorkCity" linkSize="3" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                              <Component id="txtWorkPostalCode" linkSize="3" min="-2" pref="132" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblHomeState" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="lblHomeStreetAddress" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="lblHomeUnitNumber" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="lblHomeCity" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="lblHomezipCode" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="lblHomeAddress" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtHomeStreetAddress" linkSize="3" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                              <Component id="txtHomeUnitNumber" linkSize="3" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                              <Component id="txtHomeCity" linkSize="3" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                              <Component id="txtHomeZip" linkSize="3" min="-2" pref="101" max="-2" attributes="0"/>
+                                              <Component id="txtHomeState" linkSize="3" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblFirstName" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="lblSocialSecurityNumber" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblDOB" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtFirstName" linkSize="5" min="-2" pref="132" max="-2" attributes="0"/>
+                                              <Component id="txtSSN" linkSize="5" min="-2" pref="132" max="-2" attributes="0"/>
+                                              <Component id="txtDOB" linkSize="5" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblLastName" min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="lblAnnualSalary" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtAnnualSalary" linkSize="5" min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="txtLastName" linkSize="5" min="-2" pref="114" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtFirstName" pref="132" max="32767" attributes="0"/>
-                              <Component id="txtDOB" max="32767" attributes="0"/>
-                              <Component id="txtSSN" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblLastName" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
-                              <Component id="lblAnnualSalary" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="508" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="502" max="-2" attributes="0"/>
+                                  <Component id="btnDelete" linkSize="1" min="-2" pref="121" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="btnView" linkSize="1" min="-2" pref="121" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtLastName" pref="114" max="32767" attributes="0"/>
-                              <Component id="txtAnnualSalary" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="866" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="166" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnView" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                                  <Component id="txtFirstName" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblFirstName" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                          <Component id="lblLastName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtLastName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblSocialSecurityNumber" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="txtSSN" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblDOB" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDOB" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="9" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblAnnualSalary" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtAnnualSalary" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblHomeAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDelete" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnView" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtLastName" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblLastName" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="txtFirstName" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtAnnualSalary" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAnnualSalary" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSSN" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSocialSecurityNumber" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblDOB" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDOB" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblworkAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblHomeAddress" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtWorkState" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtWorkState" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblWorkStreetAddress" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHomeState" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHomeState" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblHomeState" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblHomeStreetAddress" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtWorkStreetAddress" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHomeStreetAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblHomeStreetAddress" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtWorkStreetAddress" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHomeStreetAddress" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblWorkBuildingName" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblHomeUnitNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtWorkBuildingName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHomeUnitNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtWorkBuildingName" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHomeUnitNumber" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblWorkCity" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblHomeCity" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtWorkCity" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHomeCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtWorkCity" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHomeCity" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblWorkState" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtWorkPostalCode" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtWorkPostalCode" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblWorkzipCode" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHomeZip" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHomeZip" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblHomezipCode" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="751" max="-2" attributes="0"/>
+                  <EmptySpace pref="472" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -250,97 +225,67 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblLastName">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Last Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAnnualSalary">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Annual Salary"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblWorkStreetAddress">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Street Address"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblworkAddress">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
+              <Font name="Helvetica Neue" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Work Address"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblHomeCity">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="City"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblHomeState">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="State"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblHomezipCode">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="ZipCode"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblWorkCity">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="City"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblHomeUnitNumber">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Unit Number"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblWorkState">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="State"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblHomeAddress">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
+              <Font name="Helvetica Neue" size="14" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Home Address"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblFirstName">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="First Name"/>
           </Properties>
         </Component>
@@ -372,17 +317,11 @@
         </Container>
         <Component class="javax.swing.JLabel" name="lblWorkzipCode">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="ZipCode"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblWorkBuildingName">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Building Name"/>
           </Properties>
         </Component>
@@ -399,9 +338,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblHomeStreetAddress">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Street Address"/>
           </Properties>
         </Component>
@@ -418,17 +354,11 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblSocialSecurityNumber">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Social Security Number"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblDOB">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="13" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Date Of Birth"/>
           </Properties>
         </Component>
@@ -462,6 +392,14 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtHomeZip">
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Helvetica Neue" size="24" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="List Person"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -476,10 +414,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnSearch" min="-2" pref="94" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="12" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -489,8 +424,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -500,11 +433,6 @@
         <Component class="javax.swing.JButton" name="btnBack">
           <Properties>
             <Property name="text" type="java.lang.String" value="Main Menu"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnSearch">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
         </Component>
       </SubComponents>
