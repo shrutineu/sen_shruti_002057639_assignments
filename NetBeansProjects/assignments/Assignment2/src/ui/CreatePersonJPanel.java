@@ -197,7 +197,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(516, 516, 516)
                         .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +228,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtWorkStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWorkStreetAddress)
@@ -258,7 +258,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                     .addComponent(lblWorkZip)
                     .addComponent(txtHomeZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblHomeZip))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(btnCreate)
                 .addGap(16, 16, 16))
         );
@@ -302,14 +302,14 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -331,22 +331,22 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         String homeUnitnumber = txtHomeUnit.getText();
         String homezipcode = txtHomeZip.getText();
 
-        Person cp = personList .addPerson();
+        Person per = personList .addPerson();
 
-        cp.setFirstName(firstName);
-        cp.setLastName(lastName);
-        //      cp.setSocialSecurityNumber(ssn);
-        //      cp.setAnnualSalary(AnnualSalary);
-        cp.getHomeAddress().setStreetAddress(homeStreetAddress);
-        cp.getHomeAddress().setCity(homeCity);
-        cp.getHomeAddress().setState(homeState);
-        cp.getHomeAddress().setPostalCode(homezipcode);
-        cp.getHomeAddress().setUnitNumber(homeUnitnumber);
-        cp.getWorkAddress().setCity(workCity);
-        cp.getWorkAddress().setState(workState);
-        cp.getWorkAddress().setStreetAddress(workStreetAddress);
-        cp.getWorkAddress().setUnitNumber(workBuildingName);
-        cp.getWorkAddress().setPostalCode(workzipcode);
+        per.setFirstName(firstName);
+        per.setLastName(lastName);
+        per.setSocialSecurityNumber(Long.parseLong(ssn));
+        per.setAnnualSalary(Float.parseFloat(AnnualSalary));
+        per.getHomeAddress().setStreetAddress(homeStreetAddress);
+        per.getHomeAddress().setCity(homeCity);
+        per.getHomeAddress().setState(homeState);
+        per.getHomeAddress().setPostalCode(homezipcode);
+        per.getHomeAddress().setUnitNumber(homeUnitnumber);
+        per.getWorkAddress().setCity(workCity);
+        per.getWorkAddress().setState(workState);
+        per.getWorkAddress().setStreetAddress(workStreetAddress);
+        per.getWorkAddress().setUnitNumber(workBuildingName);
+        per.getWorkAddress().setPostalCode(workzipcode);
 
         JOptionPane.showMessageDialog(this, "New Person Record creation successful.");
 

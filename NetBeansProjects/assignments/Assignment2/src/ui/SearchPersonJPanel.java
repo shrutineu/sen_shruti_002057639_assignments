@@ -4,7 +4,11 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+import java.util.Objects;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import model.Person;
 import model.PersonDirectory;
 
 /**
@@ -14,12 +18,16 @@ import model.PersonDirectory;
 public class SearchPersonJPanel extends javax.swing.JPanel {
     JPanel workAreajPanel;
     PersonDirectory personList;
+    Person result;
+    
 
     /**
      * Creates new form SearchPersonJPanel
      */
     public SearchPersonJPanel(JPanel workAreajPanel, PersonDirectory personList) {
         initComponents();
+        
+        this.personList = personList;
     }
 
     /**
@@ -33,13 +41,45 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        SearchjPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtSearchFirstName = new javax.swing.JTextField();
+        txtSearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtSearchLastName = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtSearchAddress = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
+        ResultsjPanel = new javax.swing.JPanel();
+        lblFirstName = new javax.swing.JLabel();
+        txtFirstName = new javax.swing.JTextField();
+        lblLastName = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JTextField();
+        txtAnnualSalary = new javax.swing.JTextField();
+        lblAnnualSalary = new javax.swing.JLabel();
+        txtSSN = new javax.swing.JTextField();
+        txtDOB = new javax.swing.JTextField();
+        lblSocialSecurityNumber = new javax.swing.JLabel();
+        lblDOB = new javax.swing.JLabel();
+        lblworkAddress = new javax.swing.JLabel();
+        lblHomeAddress = new javax.swing.JLabel();
+        lblWorkStreetAddress = new javax.swing.JLabel();
+        txtWorkState = new javax.swing.JTextField();
+        lblHomeState = new javax.swing.JLabel();
+        txtHomeState = new javax.swing.JTextField();
+        lblWorkBuildingName = new javax.swing.JLabel();
+        txtWorkStreetAddress = new javax.swing.JTextField();
+        lblHomeStreetAddress = new javax.swing.JLabel();
+        txtHomeStreetAddress = new javax.swing.JTextField();
+        lblWorkCity = new javax.swing.JLabel();
+        txtWorkBuildingName = new javax.swing.JTextField();
+        lblHomeUnitNumber = new javax.swing.JLabel();
+        txtHomeUnitNumber = new javax.swing.JTextField();
+        lblWorkState = new javax.swing.JLabel();
+        txtWorkCity = new javax.swing.JTextField();
+        lblHomeCity = new javax.swing.JLabel();
+        txtHomeCity = new javax.swing.JTextField();
+        lblWorkzipCode = new javax.swing.JLabel();
+        txtWorkPostalCode = new javax.swing.JTextField();
+        lblHomezipCode = new javax.swing.JLabel();
+        txtHomeZip = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(204, 255, 255));
 
@@ -69,14 +109,264 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel1.setText("Search Persons");
+        jSplitPane1.setBackground(new java.awt.Color(204, 255, 255));
+        jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jLabel2.setText("First Name ");
+        SearchjPanel.setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel3.setText("Last Name");
+        jLabel1.setText("Search For :");
 
-        jLabel4.setText("Address");
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel2.setText("Search Persons");
+
+        btnSearch.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SearchjPanelLayout = new javax.swing.GroupLayout(SearchjPanel);
+        SearchjPanel.setLayout(SearchjPanelLayout);
+        SearchjPanelLayout.setHorizontalGroup(
+            SearchjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SearchjPanelLayout.createSequentialGroup()
+                .addGap(269, 269, 269)
+                .addComponent(jLabel1)
+                .addGap(21, 21, 21)
+                .addGroup(SearchjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SearchjPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSearch))
+                    .addComponent(jLabel2))
+                .addContainerGap(385, Short.MAX_VALUE))
+        );
+        SearchjPanelLayout.setVerticalGroup(
+            SearchjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SearchjPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SearchjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setTopComponent(SearchjPanel);
+
+        ResultsjPanel.setBackground(new java.awt.Color(204, 255, 255));
+
+        lblFirstName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblFirstName.setText("First Name");
+
+        lblLastName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblLastName.setText("Last Name");
+
+        lblAnnualSalary.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblAnnualSalary.setText("Annual Salary");
+
+        lblSocialSecurityNumber.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblSocialSecurityNumber.setText("Social Security Number");
+
+        lblDOB.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblDOB.setText("Date Of Birth");
+
+        lblworkAddress.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblworkAddress.setText("Work Address");
+
+        lblHomeAddress.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblHomeAddress.setText("Home Address");
+
+        lblWorkStreetAddress.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblWorkStreetAddress.setText("Street Address");
+
+        lblHomeState.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblHomeState.setText("State");
+
+        lblWorkBuildingName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblWorkBuildingName.setText("Building Name");
+
+        lblHomeStreetAddress.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblHomeStreetAddress.setText("Street Address");
+
+        lblWorkCity.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblWorkCity.setText("City");
+
+        lblHomeUnitNumber.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblHomeUnitNumber.setText("Unit Number");
+
+        lblWorkState.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblWorkState.setText("State");
+
+        lblHomeCity.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblHomeCity.setText("City");
+
+        lblWorkzipCode.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblWorkzipCode.setText("ZipCode");
+
+        lblHomezipCode.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblHomezipCode.setText("ZipCode");
+
+        javax.swing.GroupLayout ResultsjPanelLayout = new javax.swing.GroupLayout(ResultsjPanel);
+        ResultsjPanel.setLayout(ResultsjPanelLayout);
+        ResultsjPanelLayout.setHorizontalGroup(
+            ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultsjPanelLayout.createSequentialGroup()
+                .addContainerGap(682, Short.MAX_VALUE)
+                .addComponent(lblAnnualSalary)
+                .addGap(49, 49, 49)
+                .addComponent(txtAnnualSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(151, 151, 151))
+            .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ResultsjPanelLayout.createSequentialGroup()
+                    .addGap(153, 153, 153)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ResultsjPanelLayout.createSequentialGroup()
+                            .addGap(47, 47, 47)
+                            .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ResultsjPanelLayout.createSequentialGroup()
+                                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblWorkStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblWorkzipCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtWorkState)
+                                        .addGroup(ResultsjPanelLayout.createSequentialGroup()
+                                            .addComponent(txtWorkPostalCode, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ResultsjPanelLayout.createSequentialGroup()
+                                    .addComponent(lblWorkCity, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtWorkBuildingName))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ResultsjPanelLayout.createSequentialGroup()
+                                    .addComponent(lblWorkBuildingName, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtWorkStreetAddress))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ResultsjPanelLayout.createSequentialGroup()
+                                    .addComponent(lblWorkState, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtWorkCity)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultsjPanelLayout.createSequentialGroup()
+                                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lblHomeUnitNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblHomeCity, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblHomezipCode, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lblHomeState, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtHomeUnitNumber)
+                                        .addComponent(txtHomeCity)
+                                        .addComponent(txtHomeState)
+                                        .addComponent(txtHomeZip, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultsjPanelLayout.createSequentialGroup()
+                                    .addComponent(lblHomeStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtHomeStreetAddress)))
+                            .addGap(196, 196, 196))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultsjPanelLayout.createSequentialGroup()
+                            .addGap(155, 155, 155)
+                            .addComponent(lblworkAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblHomeAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(264, 264, 264))
+                        .addGroup(ResultsjPanelLayout.createSequentialGroup()
+                            .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblSocialSecurityNumber)
+                                .addComponent(lblDOB)
+                                .addComponent(lblFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(44, 44, 44)
+                            .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                .addComponent(txtDOB)
+                                .addComponent(txtSSN))
+                            .addGap(209, 209, 209)
+                            .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(153, 153, 153)))))
+        );
+        ResultsjPanelLayout.setVerticalGroup(
+            ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ResultsjPanelLayout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAnnualSalary)
+                    .addComponent(txtAnnualSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(356, Short.MAX_VALUE))
+            .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ResultsjPanelLayout.createSequentialGroup()
+                    .addGap(82, 82, 82)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ResultsjPanelLayout.createSequentialGroup()
+                            .addGap(1, 1, 1)
+                            .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultsjPanelLayout.createSequentialGroup()
+                            .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblFirstName, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblLastName)
+                                    .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(1, 1, 1)))
+                    .addGap(14, 14, 14)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblSocialSecurityNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSSN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblDOB)
+                        .addComponent(txtDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHomeAddress)
+                        .addComponent(lblworkAddress))
+                    .addGap(25, 25, 25)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtWorkState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblWorkStreetAddress)
+                        .addComponent(txtHomeState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblHomeState))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHomeStreetAddress)
+                        .addComponent(txtWorkStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtHomeStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblWorkBuildingName))
+                    .addGap(18, 18, 18)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHomeUnitNumber)
+                        .addComponent(txtWorkBuildingName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtHomeUnitNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblWorkCity))
+                    .addGap(18, 18, 18)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHomeCity)
+                        .addComponent(txtWorkCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtHomeCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblWorkState))
+                    .addGap(18, 18, 18)
+                    .addGroup(ResultsjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtWorkPostalCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblWorkzipCode)
+                        .addComponent(txtHomeZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblHomezipCode))
+                    .addGap(82, 82, 82)))
+        );
+
+        jSplitPane1.setRightComponent(ResultsjPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -84,43 +374,14 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(331, 331, 331)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel1)
-                        .addGap(90, 90, 90))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSearchFirstName)
-                            .addComponent(txtSearchLastName)
-                            .addComponent(txtSearchAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(423, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtSearchFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtSearchLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtSearchAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(418, Short.MAX_VALUE))
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -128,16 +389,85 @@ public class SearchPersonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        String Search = txtSearch.getText();
+        Person person = personList.searchPerson(txtSearch.getText());
+        if (Objects.isNull(person)){
+            System.out.println("This");
+            JOptionPane.showMessageDialog(this, "Details you entered does not exist!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            
+        }
+        else {
+        txtFirstName.setText(person.getFirstName());
+        txtLastName.setText(String.valueOf(person.getLastName()));
+        txtSSN.setText(String.valueOf(person.getSocialSecurityNumber()));
+        txtDOB.setText(String.valueOf(person.getDOB()));
+        txtAnnualSalary.setText(String.valueOf(person.getAnnualSalary()));
+
+        txtHomeCity.setText(String.valueOf(person.getHomeAddress().getCity()));
+        txtHomeState.setText(String.valueOf(person.getHomeAddress().getState()));
+        txtHomeStreetAddress.setText(String.valueOf(person.getHomeAddress().getStreetAddress()));
+        txtHomeZip.setText(String.valueOf(person.getHomeAddress().getPostalCode()));
+        txtHomeUnitNumber.setText(String.valueOf(person.getHomeAddress().getUnitNumber()));
+
+        txtWorkCity.setText(String.valueOf(person.getWorkAddress().getCity()));
+        txtWorkState.setText(String.valueOf(person.getWorkAddress().getState()));
+        txtWorkStreetAddress.setText(String.valueOf(person.getWorkAddress().getStreetAddress()));
+        txtWorkPostalCode.setText(String.valueOf(person.getWorkAddress().getPostalCode()));
+        txtWorkBuildingName.setText(String.valueOf(person.getWorkAddress().getUnitNumber()));
+           
+        }
+         txtSearch.setText("");
+         
+    }//GEN-LAST:event_btnSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ResultsjPanel;
+    private javax.swing.JPanel SearchjPanel;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtSearchAddress;
-    private javax.swing.JTextField txtSearchFirstName;
-    private javax.swing.JTextField txtSearchLastName;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JLabel lblAnnualSalary;
+    private javax.swing.JLabel lblDOB;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblHomeAddress;
+    private javax.swing.JLabel lblHomeCity;
+    private javax.swing.JLabel lblHomeState;
+    private javax.swing.JLabel lblHomeStreetAddress;
+    private javax.swing.JLabel lblHomeUnitNumber;
+    private javax.swing.JLabel lblHomezipCode;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblSocialSecurityNumber;
+    private javax.swing.JLabel lblWorkBuildingName;
+    private javax.swing.JLabel lblWorkCity;
+    private javax.swing.JLabel lblWorkState;
+    private javax.swing.JLabel lblWorkStreetAddress;
+    private javax.swing.JLabel lblWorkzipCode;
+    private javax.swing.JLabel lblworkAddress;
+    private javax.swing.JTextField txtAnnualSalary;
+    private javax.swing.JTextField txtDOB;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtHomeCity;
+    private javax.swing.JTextField txtHomeState;
+    private javax.swing.JTextField txtHomeStreetAddress;
+    private javax.swing.JTextField txtHomeUnitNumber;
+    private javax.swing.JTextField txtHomeZip;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtSSN;
+    private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtWorkBuildingName;
+    private javax.swing.JTextField txtWorkCity;
+    private javax.swing.JTextField txtWorkPostalCode;
+    private javax.swing.JTextField txtWorkState;
+    private javax.swing.JTextField txtWorkStreetAddress;
     // End of variables declaration//GEN-END:variables
 }

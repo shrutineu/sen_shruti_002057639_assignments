@@ -80,6 +80,8 @@ public class ListPersonJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 255, 255));
+
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
         lblLastName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -225,7 +227,6 @@ public class ListPersonJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(txtHomeStreetAddress)))
                 .addGap(129, 129, 129))
-            .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(161, 161, 161)
                 .addComponent(lblworkAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,7 +241,7 @@ public class ListPersonJPanel extends javax.swing.JPanel {
                         .addGap(103, 103, 103)
                         .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
+                        .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblSocialSecurityNumber)
                             .addComponent(lblDOB)
@@ -258,7 +259,10 @@ public class ListPersonJPanel extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                             .addComponent(txtAnnualSalary))))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,7 +295,7 @@ public class ListPersonJPanel extends javax.swing.JPanel {
                             .addComponent(lblDOB)
                             .addComponent(txtDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblAnnualSalary)
@@ -330,7 +334,7 @@ public class ListPersonJPanel extends javax.swing.JPanel {
                     .addComponent(lblWorkzipCode)
                     .addComponent(txtHomeZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblHomezipCode))
-                .addGap(708, 708, 708))
+                .addGap(751, 751, 751))
         );
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
@@ -343,12 +347,12 @@ public class ListPersonJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(43, 43, 43))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnBack)
+                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,20 +369,47 @@ public class ListPersonJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblPersonRecords.getSelectedRow();
+
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please select a row to view.");
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) tblPersonRecords.getModel();
+        Person person = (Person) model.getValueAt(selectedRowIndex, 0);
+
+        txtFirstName.setText(String.valueOf(person.getFirstName()));
+        txtLastName.setText(String.valueOf(person.getLastName()));
+        txtSSN.setText(String.valueOf(person.getSocialSecurityNumber()));
+        txtDOB.setText(String.valueOf(person.getDOB()));
+        txtAnnualSalary.setText(String.valueOf(person.getAnnualSalary()));
+
+        txtHomeCity.setText(String.valueOf(person.getHomeAddress().getCity()));
+        txtHomeState.setText(String.valueOf(person.getHomeAddress().getState()));
+        txtHomeStreetAddress.setText(String.valueOf(person.getHomeAddress().getStreetAddress()));
+        txtHomeZip.setText(String.valueOf(person.getHomeAddress().getPostalCode()));
+        txtHomeUnitNumber.setText(String.valueOf(person.getHomeAddress().getUnitNumber()));
+
+        txtWorkCity.setText(String.valueOf(person.getWorkAddress().getCity()));
+        txtWorkState.setText(String.valueOf(person.getWorkAddress().getState()));
+        txtWorkStreetAddress.setText(String.valueOf(person.getWorkAddress().getStreetAddress()));
+        txtWorkPostalCode.setText(String.valueOf(person.getWorkAddress().getPostalCode()));
+        txtWorkBuildingName.setText(String.valueOf(person.getWorkAddress().getUnitNumber()));
+    }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
@@ -400,38 +431,6 @@ public class ListPersonJPanel extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-        int selectedRowIndex = tblPersonRecords.getSelectedRow();
-
-        if(selectedRowIndex<0){
-            JOptionPane.showMessageDialog(this,"Please select a row to view.");
-            return;
-        }
-
-        DefaultTableModel model = (DefaultTableModel) tblPersonRecords.getModel();
-        Person person = (Person) model.getValueAt(selectedRowIndex, 0);
-
-        txtFirstName.setText(String.valueOf(person.getFirstName()));
-        txtLastName.setText(String.valueOf(person.getLastName()));
-        txtSSN.setText(String.valueOf(person.getSocialSecurityNumber()));
-        txtDOB.setText(String.valueOf(person.getDOB()));
-        txtAnnualSalary.setText(String.valueOf(person.getAnnualSalary()));
-         
-       
-        txtHomeCity.setText(String.valueOf(person.getHomeAddress().getCity()));
-        txtHomeState.setText(String.valueOf(person.getHomeAddress().getState()));
-        txtHomeStreetAddress.setText(String.valueOf(person.getHomeAddress().getStreetAddress()));
-        txtHomeZip.setText(String.valueOf(person.getHomeAddress().getPostalCode()));
-        txtHomeUnitNumber.setText(String.valueOf(person.getHomeAddress().getUnitNumber()));
-
-        txtWorkCity.setText(String.valueOf(person.getWorkAddress().getCity()));
-        txtWorkState.setText(String.valueOf(person.getWorkAddress().getState()));
-        txtWorkStreetAddress.setText(String.valueOf(person.getWorkAddress().getStreetAddress()));
-        txtWorkPostalCode.setText(String.valueOf(person.getWorkAddress().getPostalCode()));
-        txtWorkBuildingName.setText(String.valueOf(person.getWorkAddress().getUnitNumber()));
-    }//GEN-LAST:event_btnViewActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
