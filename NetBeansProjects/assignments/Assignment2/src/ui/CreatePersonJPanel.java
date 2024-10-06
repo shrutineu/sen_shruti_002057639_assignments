@@ -5,7 +5,7 @@
 package ui;
 
 import java.awt.CardLayout;
-import java.awt.Component;
+//import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Person;
@@ -77,6 +77,8 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         btnCreate = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(204, 255, 255));
 
         jPanel3.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -199,7 +201,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(516, 516, 516)
                         .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,7 +232,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtWorkStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWorkStreetAddress)
@@ -260,7 +262,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                     .addComponent(lblWorkZip)
                     .addComponent(txtHomeZip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblHomeZip))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(btnCreate)
                 .addGap(16, 16, 16))
         );
@@ -288,7 +290,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(btnBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(715, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -305,7 +307,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -315,6 +317,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         String firstName = txtFirstName.getText();
         String lastName = txtLastName.getText();
         String ssn = txtSSN.getText();
+        String dob = txtDOB.getText();
         String AnnualSalary = txtAnnualSalary.getText();
         String workStreetAddress = txtWorkStreetAddress.getText();
         String workCity = txtWorkCity.getText();
@@ -326,13 +329,17 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         String homeState = txtHomeState.getText();
         String homeUnitnumber = txtHomeUnit.getText();
         String homezipcode = txtHomeZip.getText();
-
-        Person per = personList .addPerson();
-
+        
+        if (firstName.isBlank() || lastName.isBlank() || ssn.isBlank() || AnnualSalary.isBlank() || workState.isBlank() || workCity.isBlank() || workBuildingName.isBlank() || workStreetAddress.isBlank()||workzipcode.isBlank() || homeStreetAddress.isBlank() || homeCity.isBlank() || homeState.isBlank() || homeUnitnumber.isBlank()||dob.isBlank()||homezipcode.isBlank()){
+            JOptionPane.showMessageDialog(null,"All fields are mandatory");
+            return; // Exit the method if validation fails
+        }
+//        else {
+        Person per = personList.addPerson();
+        
         per.setFirstName(firstName);
         per.setLastName(lastName);
-        per.setSocialSecurityNumber(Long.parseLong(ssn));
-        per.setAnnualSalary(Float.parseFloat(AnnualSalary));
+        per.setDOB(dob);
         per.getHomeAddress().setStreetAddress(homeStreetAddress);
         per.getHomeAddress().setCity(homeCity);
         per.getHomeAddress().setState(homeState);
@@ -341,16 +348,18 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         per.getWorkAddress().setCity(workCity);
         per.getWorkAddress().setState(workState);
         per.getWorkAddress().setStreetAddress(workStreetAddress);
-        per.getWorkAddress().setUnitNumber(workBuildingName);
+        per.getWorkAddress().setBuildingName(workBuildingName);
         per.getWorkAddress().setPostalCode(workzipcode);
 
         JOptionPane.showMessageDialog(this, "New Person Record creation successful.");
-
+        
+        
         txtFirstName.setText("");
         txtLastName.setText("");
         txtSSN.setText("");
         txtAnnualSalary.setText("");
         txtWorkStreetAddress.setText("");
+        txtDOB.setText("");
         txtWorkCity.setText("");
         txtWorkState.setText("");
         txtWorkBuilding.setText("");
@@ -360,6 +369,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         txtHomeState.setText("");
         txtHomeUnit.setText("");
         txtHomeZip.setText("");
+        
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

@@ -5,6 +5,7 @@
 package model;
 
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,8 +15,8 @@ public class Person {
     
     private String firstName;  
     private String lastName;   
-    private Long socialSecurityNumber; 
-    private Float AnnualSalary;
+    private long socialSecurityNumber; 
+    private float AnnualSalary;
     private String DOB; 
     private Address homeAddress; 
     private Address workAddress; 
@@ -40,13 +41,18 @@ public class Person {
     return lastName != null && !lastName.isEmpty();
     }
 
-    public boolean isValidSocialSecurityNumber() {
-        return String.valueOf(socialSecurityNumber).length() == 9 && socialSecurityNumber > 0;
-    }
-
-//    public boolean isValidAge() {
-//        return age > 0 && age < 150;
+//    public boolean isValidSocialSecurityNumber() {
+//        return String.valueOf(socialSecurityNumber).length() == 9 && socialSecurityNumber > 0;
 //    }
+    
+    public void validateSocialSecurityNumber() {
+    if (String.valueOf(socialSecurityNumber).length() != 9 || socialSecurityNumber <= 0) {
+        JOptionPane.showMessageDialog(null, 
+                "Social Security Number must be exactly 9 digits and greater than 0.", 
+                "Validation Error", 
+                JOptionPane.WARNING_MESSAGE);
+    }
+}
 
     public boolean isValidDOB() {
         return DOB != null;
@@ -85,7 +91,7 @@ public class Person {
         return socialSecurityNumber;
     }
 
-    public void setSocialSecurityNumber(Long socialSecurityNumber) {
+    public void setSocialSecurityNumber(long socialSecurityNumber) {
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
@@ -114,5 +120,8 @@ public class Person {
         this.workAddress = workAddress;
     }
     
-    
+    @Override 
+    public String toString(){
+        return getFirstName();
+    }
 }
